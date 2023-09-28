@@ -1,0 +1,53 @@
+<!-- <p>register works!</p> -->
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="left_side col-md-6 bg2 text-white">
+            <h1 class="text-center mt-5">Welcome Friends</h1>
+            <p class="text-center mt-3">To Keep Connected with us Please<br>
+                 With Your Personal Info</p>
+        </div>
+        <div class="right_side col-md-6">
+            <h2 class="mt-5 text-center text-success">Register Account</h2>
+            <p class="text-center mt-3">Or Use Email for Registration</p>
+            <form class="frm_main">
+                <form [formGroup]="register" (ngSubmit)="regform()">
+                    <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Username</label>
+                      <input type="text" class="form-control" formControlName="fname" placeholder="Enter Your Firstname" [ngClass]="{'is-invalid':submitted && f.fname.errors}">
+                      <div *ngIf="submitted && f.fname.errors">
+                        <div *ngIf="f.fname.errors.required" class="text-danger">
+                            Firstname is Required**
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputPassword1" class="form-label">Email</label>
+                      <input type="email" class="form-control" formControlName="email" placeholder="Enter Your Email" [ngClass]="{'is-invalid': submitted && f.email.errors}">
+                      <div *ngIf=" submitted && f.email.errors">
+                        <div *ngIf="f.email.errors.required" class="text-danger">
+                            Useremail is Required**
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" formControlName="pass" placeholder="Enter Your Password" [ngClass]="{'is-invalid':submitted && f.pass.errors}">
+                        <div *ngIf=" submitted && f.pass.errors">
+                            <div *ngIf="f.pass.errors.required" class="text-danger">
+                                UserPassword is Required**
+                            </div>
+                        </div>
+                      </div>
+                    <div class="mb-3 form-check">
+                      <input type="checkbox" class="form-check-input">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="button" class="btn btn-success ms-2" [routerLink]="['/auth']">Login</button>
+                  </form>
+            </form>
+        </div>
+    </div>
+</div>

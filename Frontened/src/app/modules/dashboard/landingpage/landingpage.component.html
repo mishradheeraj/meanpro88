@@ -1,0 +1,103 @@
+<!-- <p>landingpage works!</p> -->
+<app-navbar>
+
+</app-navbar>
+  
+<!--========= Dashboard******Page-Modal =============-->
+
+<!-- Modal -->
+ <form [formGroup]="popupform" (ngSubmit)="submitpopup()">
+<div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-danger">Register Now</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <div class="logo mb-3">
+        <img width="150px" src="https://th.bing.com/th/id/OIP.MUxRDqFmCVKL-HBGuABOeQHaFm?w=227&amp;h=180&amp;c=7&amp;pcl=1b1a19&amp;r=0&amp;o=5&amp;dpr=2&amp;pid=1.7" alt="logo">
+       </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Username:</label>
+            <input type="text" class="form-control" formControlName="username" [ngClass]="{'is-invalid': submitted && f.username.errors}">
+            <div *ngIf="submitted && f.username.errors">
+              <div *ngIf="f.username.errors.required" class="text-danger">
+                Username is required**
+              </div>
+            </div>
+
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Email address:</label>
+            <input type="email" class="form-control" formControlName="useremail" [ngClass]="{'is-invalid': submitted && f.useremail.errors}">
+            <div *ngIf="submitted && f.useremail.errors">
+              <div *ngIf="f.useremail.errors" class="text-danger">
+                Please Provide Your Valid Email**
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password:</label>
+            <input type="password" class="form-control" formControlName="userpassword" [ngClass]="{'is-invalid':submitted && f.userpassword.errors}">
+            <div *ngIf="submitted && f.userpassword.errors">
+              <div *ngIf="f.userpassword.errors" class="text-danger">
+                Please Provide A Valid Password**
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close">Close</button>
+        <button type="submit" class="btn btn-success">Register</button>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+
+
+
+<button type="button" class="btn btn-primary mt-1" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
+
+
+<section >
+  <div class="container">
+    <h2>Hover Rows</h2>
+    <p>The .table-hover class enables a hover state on table rows:</p>            
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>User_id:</th>
+          <th>Title:</th>
+          <th class="w-25">Description:</th>
+          <th>Price</th>
+          <th>DiscountPercentage:</th>
+          <th>Actions:</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let a of user.products">
+          <td>{{a.id}}</td>
+          <td>{{a.title}}</td>
+          <td>{{a.description}}</td>
+          <td>{{a.price}}</td>
+          <td>{{a.discountPercentage}}</td>
+          <td>
+            <button class="btn btn-warning me-2">View</button>
+            <button class="btn btn-success  me-2">Edit</button>
+            <button class="btn btn-danger">Del</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
+
+
