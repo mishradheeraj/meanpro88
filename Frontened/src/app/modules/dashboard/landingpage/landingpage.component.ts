@@ -4,29 +4,40 @@ import { MyserviceService } from '../../../Service/myservice.service';
 
 
 
-
 @Component({
   selector: 'app-landingpage',
   templateUrl: './landingpage.component.html',
   styleUrls: ['./landingpage.component.scss']
 })
 export class LandingpageComponent implements OnInit{
+
+  ngOnInit(): void {
+    console.log("Hey There ngOnit is Called");
+  }
+
   user:any;
   submitted = false;
   constructor(private myService: MyserviceService) { 
     this.myService.users().subscribe((data)=>{
       console.log(data);
       this.user= data;
-    })
+    });
   }
 
 
- 
-  ngOnInit(): void {
-    
-    console.log("Hey There ngOnit is Called");
-    
+
+  popup_form = new FormGroup({
+    firstname: new FormControl(''),
+    lastname: new FormControl(''),
+    email: new FormControl(''),
+    passowrd: new FormControl('')
+  })
+
+  frm_submit(){
+    console.log(this.popup_form.value);
   }
+
+  
 
 
   popupform =  new FormGroup({

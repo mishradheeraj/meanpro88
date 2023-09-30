@@ -1,0 +1,47 @@
+<form [formGroup]="popup_form">
+  <div mat-dialog-title>Register Form</div>
+
+<div mat-dialog-content class="content_top">
+    <div class="row">
+       <div class="col-md-6">
+        <mat-form-field appearance="outline">
+            <mat-label>Firstname</mat-label>
+            <input matInput placeholder="Placeholder" type="text" formControlName="firstname">
+            <div submitted *ngIf="f.firstname.errors">
+              <div *ngIf="f.firstname.errors">
+              </div>
+            </div>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+       </div>
+         <div class="col-md-6">
+            <mat-form-field appearance="outline">
+                <mat-label>Lastname</mat-label>
+                <input matInput placeholder="Placeholder" type="text" formControlName="lastname">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+         </div>
+    </div>
+    <div class="row">
+         <mat-form-field appearance="outline">
+             <mat-label>Email:</mat-label>
+             <input matInput placeholder="Placeholder" type="email" formControlName="email">
+             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+           </mat-form-field>
+        </div>
+
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Password:</mat-label>
+                <input matInput placeholder="Placeholder" type="password" formControlName="passowrd">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+           </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="accent">cancel</button>
+    <button mat-raised-button color="primary">Register</button>
+</div>
+
+</form>
+
