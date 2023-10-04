@@ -13,18 +13,23 @@ export class LandingpageComponent implements OnInit{
 
   ngOnInit(): void {
     console.log("Hey There ngOnit is Called");
+    this.myalldata();
   }
 
   user:any;
   submitted = false;
   constructor(private myService: MyserviceService) { 
-    this.myService.users().subscribe((data)=>{
-      console.log(data);
-      this.user= data;
-    });
+   
   }
+  // =============get api all data====================//
+ myalldata(){
+  this.myService.users().subscribe((data) =>{
+    console.log(data);
+    this.user= data;
+  });
+ }
 
-
+ 
 
   popup_form = new FormGroup({
     firstname: new FormControl(''),

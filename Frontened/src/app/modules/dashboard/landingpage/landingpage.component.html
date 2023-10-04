@@ -73,20 +73,20 @@
       <thead>
         <tr>
           <th>User_id:</th>
-          <th>Title:</th>
-          <th class="w-25">Description:</th>
-          <th>Price</th>
+          <th>Name:</th>
+          <th>Lastname:</th>
+          <th>Birthdate</th>
           <th>DiscountPercentage:</th>
           <th>Actions:</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let a of user.products">
-          <td>{{a.id}}</td>
-          <td>{{a.title}}</td>
-          <td>{{a.description}}</td>
-          <td>{{a.price}}</td>
-          <td>{{a.discountPercentage}}</td>
+        <tr *ngFor="let a of user">
+          <td>{{a._id}}</td>
+          <td>{{a.firstname}}</td>
+          <td>{{a.lastname}}</td>
+          <td>{{a.birthday}}</td>
+          <td>{{a.uuid}}</td>
           <td>
             <button class="btn btn-warning me-2">View</button>
             <button class="btn btn-success  me-2">Edit</button>
